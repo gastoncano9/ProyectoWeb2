@@ -1,0 +1,823 @@
+/*FUENTES*/
+@font-face
+{
+    font-family: "trebuchetMS";
+    src: url("../css/fonts/TrebuchetMS.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: "bebasneue";
+    src: url("../css/fonts/BebasNeue.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: "websymbolsregular";
+    src: url("../css/fonts/websymbols-regular-webfont.eot");
+    src: url("../css/fonts/websymbols-regular-webfont.eot?#iefix") format("embedded-opentype"),
+         url("../css/fonts/websymbols-regular-webfont.woff") format("woff"),
+         url("../css/fonts/websymbols-regular-webfont.ttf") format("truetype"),
+         url("../css/fonts/websymbols-regular-webfont.svg#websymbolsregular") format("svg");
+         font-weight: normal;
+         font-style: normal;
+    
+}
+/*ESTILOS GENERALES*/
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+body
+{
+    background-image:url("../imagenes/pattern.png");
+}
+
+.wrap
+{
+    margin: 0px auto;
+    width: 1250px;
+}
+
+.icono
+{
+    font-family:"websymbolsregular";
+}
+
+.clearfix
+{
+    clear: both;
+    float: none;
+}
+
+/*CABECERA*/
+
+#header
+{
+    width: 100%;
+    height: 70px;
+    background-color: #000000;
+    color: white;
+    font-family:"bebasneue";
+}
+
+#logo
+{
+    float:left;
+    background-color: #37BCF9;
+    width: 200px;
+    height: 56px;
+    text-align: center;
+    letter-spacing: 1px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 300ms;
+    margin-top: 8px;
+    margin-left: 35px;
+}
+
+#logo:hover
+{
+    border-radius: 2px;
+    color: black;
+    background: #ccc;
+}
+
+#logo h3
+{
+    display: block;
+    font-size: 40px;
+    float: right;
+    margin-top: 8px;
+    margin-right: 66px;
+    transition: all 300ms;
+}
+
+.engranaje
+{
+    font-family: "websymbolsregular";
+}
+
+#logo .engranaje
+{
+    display: block;
+    float: left;
+    font-size:30px;
+    margin-top: 10px;
+    margin-left: 27px;
+    animation-name: rotacion;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+
+@keyframes rotacion
+{
+    from
+    {
+        transform: rotateZ(0deg);
+    }
+
+    to
+    {
+        transform: rotateZ(360deg);
+    }
+}
+
+#logo:hover .engranaje
+{
+    animation: fromBellow 500ms linear;
+}
+
+@keyframes fromBellow
+{
+    0%
+    {
+        transform: translateY(0%);
+    }
+    50%
+    {
+        transform: translateY(200%);
+    }
+    100%
+    {
+        transform: translateY(0%);
+    }
+}
+
+#logo:hover h3
+{
+    animation:fromRigth 300ms linear;
+}
+
+@keyframes fromRigth
+{
+    from
+    {
+        transform: translateX(200%);
+    }
+    to
+    {
+        transform:translateX(0%);
+    }
+}
+
+#menu
+{
+    float: right;
+    margin-right: 11%;
+    height: 70px;
+    background-color: black;
+}
+
+#menu ul li
+{
+    font-size: 24px;
+    display: inline-block;
+    margin: 0px 20px 0px 20px;
+    letter-spacing: 1px;
+    line-height: 72px
+}
+
+#menu ul li a
+{
+    display: block;
+    text-decoration: none;
+    color: white;
+    transition: all 200ms;
+}
+
+#menu ul li a:hover
+{
+    color:#37BCF9;
+    transform:scale(1.2, 1.2);
+}
+
+#banner
+{
+    width: 93%;
+    height: 100px;
+    border: 10px solid white;
+    box-shadow: 0px 0px 2px gray;
+    background-image: url("../imagenes/bakbaner.png");
+    background-position: -400px -200px;
+    margin: 20px auto;
+    overflow: hidden;
+    animation:banner 10s linear;
+}
+
+@keyframes banner
+{
+    0%
+    {
+        background-position: 0px 0px;
+    }
+    100%
+    {
+        background-position: -400px -200px;
+    }
+}
+
+#banner h1
+{
+    display: block;
+    font-family: "bebasneue";
+    color: white;
+    letter-spacing: 2px;
+    width: 850px;
+    font-size:45px;
+    margin: 27px auto;
+    text-align:center;
+    font-weight: normal;
+    text-shadow: 2px 2px 1px black;
+    animation: show 10s linear;
+}
+
+@keyframes show
+{
+    0%
+    {
+        transform: translateX(-600%) scale(5, 5);
+        opacity: 1;
+    }
+    50%
+    {
+        transform: translateX(600%) scale(5, 5);
+        opacity: 1;
+    }
+    75%
+    {
+        transform: translateX(-600%) scale(5, 5);
+        text-shadow: none;
+        color: transparent;
+        opacity: 0;
+    }
+    100%
+    {
+        transform: translateX(0%) scale(1, 1);
+        text-shadow: 2px 2px 1px black;
+        color: white;
+        opacity: 1;
+    }
+}
+.tarjeta
+{
+    float: left;
+    width: 205px;
+    height: 305px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 2px #ddd;
+    overflow: hidden;
+    margin: 20px;
+    margin-top:40px;
+    margin-left: 20px;
+    cursor: pointer;
+    background-color: white;
+    transition:all 300ms;
+}
+
+.tarjeta:hover
+{
+    background:black;
+}
+
+.tarjeta .icono
+{
+    display:block;
+    width: 100%;
+    height: 130px;
+    font-size: 50px;
+    line-height: 112px;
+    text-align: center;
+    margin: 0px auto;
+    transition: all 300ms;
+}
+
+.tarjeta:hover .icono
+{
+    font-size: 70px;
+    color: #37bcf9;
+    animation: up 300ms linear;
+}
+
+@keyframes up
+{
+    from
+    {
+        transform: translateY(-200%);
+    }
+    to
+    {
+        transform: translateY(0%);
+    } 
+}
+
+
+.tarjeta .categoria
+{
+    width: 100%;
+    height: 50px;
+    color: #00538C;
+    margin-top: 5px;
+    text-align: center;
+    font-family: "trebuchetMS";
+    font-size: 21px;
+    font-weight: bold;
+    transition: all 300ms;
+}
+
+.tarjeta:hover .categoria
+{
+    color: white;
+    animation: texto 400ms linear;
+}
+
+@keyframes texto
+{
+    from
+    {
+        transform: translateY(-300%);
+        color: black;
+    }
+    to
+    {
+        transform: translateY(0%);
+        color: white;
+    }
+}
+
+.tarjeta .descripcion
+{
+    font-family: "trebuchetMS";
+    color: #046cb1;
+    text-align: center;
+    font-size:15px;
+    transition: all 300ms linear;
+}
+
+.tarjeta:hover .descripcion
+{
+    color: white;
+    animation: descripcion 400ms linear;
+}
+
+@keyframes descripcion
+{
+    from
+    {
+        transform: translateX(-300%);
+        color: black;
+    }
+    to
+    {
+        transform: translateX(0%);
+        color: white;
+    }
+}
+
+#barra
+{
+    width: 300px;
+    min-height: 1200px;
+    font-family: "trebuchetMS";
+    float:right;
+    margin: 33px;
+}
+
+#barra h3
+{
+    display: block;
+    width: auto;
+    height: 45px;
+    line-height: 49px;
+    background:url("../imagenes/pxgray.png"), white;
+    box-shadow: 0px 1px 0px #393d3f,1px 2px 0px #393d3f,2px 3px 0px #393d3f,3px 4px 0px #393d3f;
+    font-size:30px;
+    font-family: "bebasneue";
+    font-weight: normal;
+    letter-spacing: 2px;
+    padding-left: 15px;
+    margin-top:30px;
+    margin-bottom:15px;
+}
+
+.buscar
+{
+    width: 90%;
+    height: 30px;
+    margin: 10px auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px #ccc inset;
+}
+
+#barra input[type = "text"]
+{
+    width: 85%;
+    height: 30px;
+    border: none;
+    padding-left: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #ccc;
+    transition: all 300ms;
+}
+
+#barra input[type = "text"]:focus
+{
+    color: #555;
+}
+
+#barra input[type = "button"],
+#barra input[type = "submit"]
+{
+    height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-left: 1px solid #ccc;
+    color: #555;
+    padding-left: 6px;
+}
+
+.caja
+{
+    width: 90%;
+    height: 240px;
+    margin: 0px auto;
+    margin-top: 20px;
+    padding-top: 2px;
+    background-color: white;
+    box-shadow: 0px 0px 1px rgba(61, 44, 44, 0.3),  0px 3px 7px rgba(61, 44, 44, 0.3),  0px 1px white inset, 0px -3px 2px rgba(61, 44, 44, 0.3) inset;
+}
+
+#redes .overlay
+{
+    display: block;
+    height: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 0px 0px 1px #ccc;
+    position: absolute;
+    padding: 5px;
+    margin-left: 70px;
+    margin-top: -52px;
+    transform: translateX(-80%);
+    opacity: 0;
+    transition: all 300ms;
+}
+
+#redes div:hover .overlay
+{
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+#login input[type = "email"],
+#login input[type ="password"]
+{
+    display: block;
+    margin: 0px auto;
+    width: 83%;
+    height: 30px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #ccc inset;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding-left: 37px;
+}
+
+#login input[type = "email"]:focus,
+#login input[type ="password"]:focus
+{
+    color: #555;
+    box-shadow: 1px 1px 1px gray inset;
+    outline: none;
+}
+
+#login #usuario
+{
+    text-align: center;
+    display: block;
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 5px;
+    height: 30px;
+}
+
+#login #contraseña
+{
+    text-align: center;
+    display: block;
+    position: absolute;
+    margin-left: 13px;
+    margin-top: 27px;
+    height: 30px;
+    font-size: 20px;
+}
+
+#login input[type = "submit"],
+#login input[type = "reset"],
+#login input[type = "button"],
+#login button
+{
+    text-align: center;
+    height: 35px;
+    width: 100px;
+    margin-top: 20px;
+    color: white;
+    background: linear-gradient(to bottom, #3eb8e5 0%,#2ca0ca 100%);
+    border: 1px solid #156785;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: "trebuchetMS";
+    font-weight: lighter;
+    margin-left: 22px;
+    transition: all 300ms;
+    margin-bottom: 20px;
+}
+
+#login input[type = "submit"]:hover,
+#login input[type = "reset"]:hover,
+#login input[type = "button"]:hover,
+#login button:hover
+{
+    box-shadow: 0px 0px 3px gray;
+}
+
+#login a
+{
+    display: block;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+#login a:hover
+{
+    text-decoration: underline;
+    color: #2f78bc;
+}
+
+#redes
+{
+    width: 60%;
+}
+
+#redes a
+{
+    display: block;
+    color: black;
+    text-decoration: none;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left:20px;
+}
+
+#articulos
+{
+    width: 860px;
+    float: left;
+}
+
+#articulos h2
+{
+    display: block;
+    width: 96%;
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+    font-family: "bebasneue";
+    font-size: 40px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    background: url("../imagenes/pxgray.png"),white;
+    box-shadow: 0px 1px 0px #393d3f,1px 2px 0px #393d3f,2px 3px 0px #393d3f,3px 4px 0px #393d3f;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+
+#articulos article
+{
+    width: 96%;
+    height: auto;
+    border: 1px solid #ccc;
+    margin: 40px auto;
+    margin-left: 20px;
+    font-family:"trebuchetMS";
+    background: white;
+    color: black;
+    box-shadow: 1px 1px 2px #ddd;
+}
+
+#articulos article h4
+{
+    display: block;
+    font-size: 23px;
+    margin: 3px;
+}
+
+#articulos article h4 a
+{
+    color:#046cb1;
+    text-decoration: none;
+    transition: all 300ms;
+    margin-left: 10px;
+}
+
+#articulos article h4 a:hover
+{
+    color:#0b4f7c;
+    text-decoration: underline;
+}
+
+#articulos .data
+{
+    float: right;
+    background: #393d3f;
+    color: white;
+    height: 30px;
+    line-height: 30px;
+    padding: 4px;
+    border-radius: 0px 0px 0px 5px;
+    font-size: 13px;
+}
+
+#articulos .data span
+{
+    margin: 6px;
+}
+
+#articulos p
+{
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+} 
+
+#blog
+{
+    height: 120px;
+    line-height: 120px;
+    margin-top: 60px;
+    box-shadow:1px 1px 1px #ccc inset;
+    text-align: center;
+    transition: all 1s;
+}
+
+#blog a
+{
+    text-decoration: none;
+    color: #00538C;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 45px;
+    font-family: "bebasneue";
+    display: block;
+    transition: all 1s;
+}
+
+#blog:hover
+{
+    background: #555;
+    border: 10px solid #37bcf9;
+    border-radius: 240px;
+    box-shadow: 0px 0px 10px gray;
+    animation:neon 10s infinite linear;
+}
+
+#blog:hover a
+{
+    color: white;
+    text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black, 1px 5px 1px black, 1px 6px 1px black;
+}
+
+@keyframes neon
+{
+    0%
+    {
+        border: 10px solid #37bcf9;
+    }
+    25%
+    {
+        border: 10px solid green;
+    }
+    50%
+    {
+        border: 10px solid yellow;
+    }
+    75%
+    {
+        border: 10px solid white;
+    }
+    100%
+    {
+        border: 10px solid #37bcf9;
+    }
+}
+
+footer
+{
+    width: 100%;
+    height: 470px;
+    background: black;
+    color: white;
+    overflow: hidden;
+}
+
+footer .wrap > div
+{
+    float: left;
+    width: 320px;
+    height: 370px;
+    margin: 40px;
+    text-align: center;
+    color: white;
+    font-family: "trebuchetMS";
+}
+
+footer a
+{
+    text-decoration: none;
+    text-transform:uppercase;
+    color: #37BCF9;
+    transition: all 300ms;
+}
+
+footer h5
+{
+    display: block;
+    background: url("../imagenes/pxgray.png"), white;
+    border-radius: 5px;
+    height: 50px;
+    line-height: 50px;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: "bebasneue";
+    color: black;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+footer ul
+{
+    text-align: left;
+    margin: 22px;
+    font-size: 25px;
+}
+
+footer ul li
+{
+    margin-top: 10px;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+footer ul li a
+{
+    display: block;
+    height: 40px;
+    transition:all 300ms;
+}
+
+footer ul li:hover a
+{
+    padding-left: 40px;
+    color: white;
+    width: 100%;
+}
+
+footer iframe
+{
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 5px solid white;
+    box-shadow: 0px 0px 5px #ccc;
+}
+
+footer img
+{
+    margin-bottom:15px;
+}
+
+footer #browsers img
+{
+    width: 45px;
+}
